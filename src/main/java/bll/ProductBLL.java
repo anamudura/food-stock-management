@@ -43,12 +43,18 @@ public class ProductBLL {
     public Product UpdateProduct(int id, String nume, int quantity, int price)
     {
 
-        if(!Objects.equals(nume,""))
-            productDao.update(findProductbyId(id),"nume",nume, id);
-        if(quantity !=0)
-            productDao.update(findProductbyId(id),"quantity",quantity, id);
-        if(price !=0)
-            productDao.update(findProductbyId(id),"price",price, id);
+        if(!Objects.equals(nume,"")) {
+            productDao.update(findProductbyId(id), "nume", nume, id);
+            return new Product(-1, null,0,0);
+        }
+        if(quantity !=0) {
+            productDao.update(findProductbyId(id), "quantity", quantity, id);
+            return new Product(-1, null,0,0);
+        }
+        if(price !=0) {
+            productDao.update(findProductbyId(id), "price", price, id);
+            return new Product(-1, null,0,0);
+        }
         return new Product(-1, null,0,0);
     }
     /**

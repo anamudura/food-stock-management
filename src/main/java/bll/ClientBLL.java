@@ -61,10 +61,14 @@ public class ClientBLL {
 	public Client UpdateClient(int id,String nume,String email)
 	{
 
-		if(!Objects.equals(nume," "))
-			studentDAO.update(findStudentById(id),"name",nume,id);
-		if(!Objects.equals(email," "))
-			studentDAO.update(findStudentById(id),"email",email,id);
+		if(!Objects.equals(nume," ")) {
+			studentDAO.update(findStudentById(id), "name", nume, id);
+			return new Client(-1,null,null);
+		}
+		if(!Objects.equals(email," ")) {
+			studentDAO.update(findStudentById(id), "email", email, id);
+			return new Client(-1,null,null);
+		}
 		return new Client(-1,null,null);
 	}
 	/**
