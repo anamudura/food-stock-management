@@ -1,0 +1,5 @@
+ORDER NUMBER 110
+Name: Vasile
+Product name: pepene
+Price: 10
+Total amount to pay: 10
